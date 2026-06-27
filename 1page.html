@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATI - Generalized AI Train Intelligence</title>
+    <link rel="stylesheet" href="1page.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo Section -->
+        <div class="logo-section">
+          <div class="logo-icon">
+            <img src="logo2.jpg" alt="GATI Logo" class="footer-logo-img">
+            </div>
+          <div class="logo-text">
+            <h1 class="logo-title">GATI</h1>
+            <p class="logo-subtitle">Generalized AI Train Intelligence</p>
+          </div>
+        </div>
+
+                <!-- Status Badge -->
+                <div class="status-section">
+                    <div class="status-badge">
+                        <div class="status-dot"></div>
+                        System Online
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="header-controls">
+                    <button class="btn btn-outline btn-sm dashboard-btn">
+                        <a href="2page.html"> Launch Dashboard</a>
+                    </button>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Dashboard Section -->
+    <section class="hero-dashboard">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1685960248124-b1d7589d0cdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyYWlsd2F5JTIwdHJhY2tzJTIwYWVyaWFsJTIwdmlld3xlbnwxfHx8fDE3NTc4NDUxMTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="Railway Network" class="background-image">
+            <div class="hero-overlay"></div>
+            <div class="diagonal-overlay-1"></div>
+            <div class="diagonal-overlay-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Main Content -->
+                <div class="hero-content">
+                    <div class="hero-header">
+                        <div class="hero-badge">
+                            <div class="badge-dot"></div>
+                            Next-Gen Railway Automation
+                        </div>
+                        <div class="current-time" id="current-time"></div>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="gradient-text">AI-Powered</span><br>
+                        Railway Control<br>
+                        <span class="subtitle">Real-time Intelligence & Automation</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Transform your railway operations with intelligent automation, predictive analytics,
+                        and real-time optimization. Reduce delays, improve safety, and maximize efficiency
+                        with our advanced AI control system.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="2page.html"> <button class="btn btn-primary btn-large">
+                                Launch Control Dashboard
+                                <span class="btn-arrow">→</span>
+                            </button></a>
+
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card blue">
+                            <div class="stat-value" id="active-trains">0</div>
+                            <div class="stat-label">Active Trains</div>
+                        </div>
+                        <div class="stat-card green">
+                            <div class="stat-value" id="on-time-perf">0%</div>
+                            <div class="stat-label">On-Time Performance</div>
+                        </div>
+                        <div class="stat-card orange">
+                            <div class="stat-value" id="delay-reduction">0%</div>
+                            <div class="stat-label">Delay Reduction</div>
+                        </div>
+                        <div class="stat-card purple">
+                            <div class="stat-value" id="system-uptime">0%</div>
+                            <div class="stat-label">System Uptime</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Control Terminal -->
+                <div class="terminal-container">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="dot red"></div>
+                                <div class="dot yellow"></div>
+                                <div class="dot green"></div>
+                            </div>
+                            <span class="terminal-title">GATI Control Terminal</span>
+                        </div>
+
+                        <div class="terminal-content">
+                            <div class="terminal-line">
+                                <div class="status-dot blue pulse"></div>
+                                <span class="train-name">Express 101</span>
+                                <span class="train-status">Platform 3</span>
+                            </div>
+                            <div class="terminal-line">
+                                <div class="status-dot green"></div>
+                                <span class="train-name">Freight 229</span>
+                                <span class="train-status">On Schedule</span>
+                            </div>
+                            <div class="terminal-line">
+                                <div class="status-dot orange pulse"></div>
+                                <span class="train-name">Local 456</span>
+                                <span class="train-status">3 min delay</span>
+                            </div>
+
+                            <div class="terminal-divider"></div>
+
+                            <div class="ai-recommendation">
+                                <div class="ai-label">🤖 AI Recommendation:</div>
+                                <div class="ai-text">Hold Freight 229 for 4 mins to optimize Express 101 passage</div>
+                            </div>
+
+                            <div class="terminal-timestamp">
+                                Last updated: <span id="terminal-time"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs Section -->
+    <section class="technical-specs">
+        <div class="section-background">
+            <div class="bg-circle-1"></div>
+            <div class="bg-circle-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Technical Specifications</div>
+                <h2 class="section-title">
+                    Comprehensive Railway<br>
+                    <span class="gradient-text">Automation Features</span>
+                </h2>
+                <p class="section-description">
+                    Our intelligent system combines cutting-edge AI with practical railway operations
+                    to deliver unprecedented control and efficiency.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-offset="0">
+                    <div class="card-accent blue"></div>
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon blue">🤖</div>
+                            <div>
+                                <h3 class="feature-title">AI-Powered Optimization</h3>
+                                <p class="feature-description">Advanced machine learning algorithms analyze traffic
+                                    patterns and provide real-time routing recommendations.</p>
+                            </div>
+                        </div>
+                        <div class="feature-specs">
+                            <h4 class="specs-title">Key Specs</h4>
+                            <div class="specs-badges">
+                                <span class="spec-badge">99.2% accuracy</span>
+                                <span class="spec-badge">Sub-second response</span>
+                                <span class="spec-badge">ML prediction engine</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-offset="1">
+                    <div class="card-accent green"></div>
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon green">📈</div>
+                            <div>
+                                <h3 class="feature-title">Predictive Analytics</h3>
+                                <p class="feature-description">Forecast potential congestion and disruptions 15–30
+                                    minutes in advance with 94% accuracy.</p>
+                            </div>
+                        </div>
+                        <div class="feature-specs">
+                            <h4 class="specs-title">Key Specs</h4>
+                            <div class="specs-badges">
+                                <span class="spec-badge">30-min forecast</span>
+                                <span class="spec-badge">94% accuracy rate</span>
+                                <span class="spec-badge">Real-time updates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-offset="0">
+                    <div class="card-accent purple"></div>
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon purple">🛡️</div>
+                            <div>
+                                <h3 class="feature-title">Digital Twin Technology</h3>
+                                <p class="feature-description">Live virtual representation of your railway section with
+                                    real-time synchronization.</p>
+                            </div>
+                        </div>
+                        <div class="feature-specs">
+                            <h4 class="specs-title">Key Specs</h4>
+                            <div class="specs-badges">
+                                <span class="spec-badge">Real-time sync</span>
+                                <span class="spec-badge">3D visualization</span>
+                                <span class="spec-badge">IoT integration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-offset="1">
+                    <div class="card-accent orange"></div>
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon orange">⚡</div>
+                            <div>
+                                <h3 class="feature-title">What-If Simulator</h3>
+                                <p class="feature-description">Test your decisions against AI-optimized solutions to
+                                    build confidence and learn optimal strategies.</p>
+                            </div>
+                        </div>
+                        <div class="feature-specs">
+                            <h4 class="specs-title">Key Specs</h4>
+                            <div class="specs-badges">
+                                <span class="spec-badge">Scenario testing</span>
+                                <span class="spec-badge">AI comparison</span>
+                                <span class="spec-badge">Risk analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-offset="0">
+                    <div class="card-accent teal"></div>
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon teal">📊</div>
+                            <div>
+                                <h3 class="feature-title">Performance Dashboard</h3>
+                                <p class="feature-description">Comprehensive KPI monitoring with real-time metrics and
+                                    historical performance analysis.</p>
+                            </div>
+                        </div>
+                        <div class="feature-specs">
+                            <h4 class="specs-title">Key Specs</h4>
+                            <div class="specs-badges">
+                                <span class="spec-badge">Real-time KPIs</span>
+                                <span class="spec-badge">Historical data</span>
+                                <span class="spec-badge">Custom reports</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-offset="1">
+                    <div class="card-accent red"></div>
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon red">⚠️</div>
+                            <div>
+                                <h3 class="feature-title">Smart Alerts</h3>
+                                <p class="feature-description">Intelligent notification system with predictive warnings
+                                    and priority-based alerts.</p>
+                            </div>
+                        </div>
+                        <div class="feature-specs">
+                            <h4 class="specs-title">Key Specs</h4>
+                            <div class="specs-badges">
+                                <span class="spec-badge">Priority routing</span>
+                                <span class="spec-badge">Smart filtering</span>
+                                <span class="spec-badge">Multi-channel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-bottom">
+                <div class="divider-line"></div>
+                <div class="bottom-badge">Ready to experience the future?</div>
+                <div class="divider-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Overview Section -->
+    <section class="system-overview">
+        <div class="overview-background">
+            <div class="bg-pattern-1"></div>
+            <div class="bg-pattern-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="overview-grid">
+                <!-- Content -->
+                <div class="overview-content">
+                    <div class="content-badge">
+                        <div class="badge-dot green"></div>
+                        Digital Twin Technology
+                    </div>
+
+                    <h2 class="overview-title">
+                        Real-Time Railway<br>
+                        <span class="gradient-text green-blue">Section Monitoring</span>
+                    </h2>
+
+                    <p class="overview-description">
+                        Experience complete visibility into your railway operations with our advanced
+                        digital twin platform. Monitor train positions, track status, and system
+                        performance in real-time with unprecedented accuracy.
+                    </p>
+
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon-small green">🛰️</div>
+                            <span>Live train tracking with GPS precision</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-small blue">🎛️</div>
+                            <span>Interactive station and signal monitoring</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-small purple">🎨</div>
+                            <span>Color-coded track status indicators</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-small orange">📡</div>
+                            <span>Real-time IoT sensor integration</span>
+                        </div>
+                    </div>
+
+                    <div class="overview-buttons">
+                        <button class="btn btn-primary">
+                            View Live Dashboard
+                            <span class="btn-icon">📊</span>
+                        </button>
+                        <button class="btn btn-outline">
+                            Technical Documentation
+                            <span class="btn-icon">📋</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dashboard Preview -->
+                <div class="dashboard-preview">
+                    <div class="dashboard-card">
+                        <div class="dashboard-header">
+                            <div class="dashboard-dots">
+                                <div class="dot red"></div>
+                                <div class="dot yellow"></div>
+                                <div class="dot green"></div>
+                            </div>
+                            <span class="dashboard-title">Railway Control Center</span>
+                            <div class="live-badge">LIVE</div>
+                        </div>
+
+                        <div class="dashboard-content">
+                            <div class="network-status">
+                                <div class="status-title">Network Status</div>
+                                <div class="status-grid">
+                                    <div class="status-item green">
+                                        <div class="status-value" id="overview-ontime">94%</div>
+                                        <div class="status-label">On-Time</div>
+                                    </div>
+                                    <div class="status-item blue">
+                                        <div class="status-value" id="overview-active">127</div>
+                                        <div class="status-label">Active</div>
+                                    </div>
+                                    <div class="status-item orange">
+                                        <div class="status-value" id="overview-delayed">3</div>
+                                        <div class="status-label">Delayed</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="active-trains">
+                                <div class="trains-title">Active Trains</div>
+                                <div class="train-list">
+                                    <div class="train-item">
+                                        <div class="train-info">
+                                            <div class="train-dot blue"></div>
+                                            <span class="train-id">EXP-101</span>
+                                            <span class="train-separator">•</span>
+                                            <span class="train-location">Delhi Central</span>
+                                        </div>
+                                        <div class="train-status">
+                                            <span class="status-text blue">On Platform</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="train-item">
+                                        <div class="train-info">
+                                            <div class="train-dot green"></div>
+                                            <span class="train-id">FRT-229</span>
+                                            <span class="train-separator">•</span>
+                                            <span class="train-location">Section B-7</span>
+                                        </div>
+                                        <div class="train-status">
+                                            <span class="status-text green">En Route</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="train-item">
+                                        <div class="train-info">
+                                            <div class="train-dot orange pulse"></div>
+                                            <span class="train-id">LOC-456</span>
+                                            <span class="train-separator">•</span>
+                                            <span class="train-location">Junction A-3</span>
+                                        </div>
+                                        <div class="train-status">
+                                            <span class="status-text orange">Delayed</span>
+                                            <span class="delay-badge">+3 min</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="train-item">
+                                        <div class="train-info">
+                                            <div class="train-dot purple"></div>
+                                            <span class="train-id">EXP-789</span>
+                                            <span class="train-separator">•</span>
+                                            <span class="train-location">Platform 2</span>
+                                        </div>
+                                        <div class="train-status">
+                                            <span class="status-text purple">Approaching</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ai-recommendation-panel">
+                                <div class="ai-header">
+                                    <span class="ai-icon">🤖</span>
+                                    <span class="ai-title">AI Recommendation</span>
+                                </div>
+                                <p class="ai-message">
+                                    Optimize Express 101 departure by holding Freight 229 at Section B-7 for 4 minutes.
+                                    This will reduce overall network delay by 12%.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Status Cards -->
+                    <div class="floating-card top-right">
+                        <div class="floating-content">
+                            <div class="status-dot green pulse"></div>
+                            <span>System Online</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-card bottom-left">
+                        <div class="floating-content">
+                            <div class="uptime-value">99.8%</div>
+                            <div class="uptime-label">Uptime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Metrics Section -->
+    <section class="performance-metrics" id="performance-section">
+        <div class="metrics-background">
+            <div class="bg-shape-1"></div>
+            <div class="bg-shape-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge purple">Performance Analytics</div>
+                <h2 class="section-title">
+                    Real-Time System<br>
+                    <span class="gradient-text purple-blue">Performance Metrics</span>
+                </h2>
+                <p class="section-description">
+                    Monitor your railway network's performance with comprehensive metrics and KPIs.
+                    Our AI system continuously optimizes operations based on real-time data.
+                </p>
+            </div>
+
+            <div class="metrics-dashboard">
+                <div class="metrics-grid">
+                    <!-- Primary Metrics -->
+                    <div class="metrics-column">
+                        <div class="metric-card blue">
+                            <div class="metric-header">
+                                <h3 class="metric-title">Network Efficiency</h3>
+                                <div class="metric-value" id="efficiency-value">0%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="efficiency-progress"></div>
+                            </div>
+                            <div class="metric-footer">
+                                <span>Target: 90%</span>
+                                <span>↗ +5% from last month</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card green">
+                            <div class="metric-header">
+                                <h3 class="metric-title">AI Prediction Accuracy</h3>
+                                <div class="metric-value" id="accuracy-value">0%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="accuracy-progress"></div>
+                            </div>
+                            <div class="metric-footer">
+                                <span>Industry Best: 94%</span>
+                                <span>🎯 Exceeding target</span>
+                            </div>
+                        </div>
+
+                        <div class="metric-card purple">
+                            <div class="metric-header">
+                                <h3 class="metric-title">System Uptime</h3>
+                                <div class="metric-value" id="uptime-value">0%</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="uptime-progress"></div>
+                            </div>
+                            <div class="metric-footer">
+                                <span>SLA: 99.5%</span>
+                                <span>✅ Meeting SLA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Analytics -->
+                    <div class="metrics-column">
+                        <div class="analytics-card">
+                            <h3 class="analytics-title">Live Train Throughput</h3>
+
+                            <div class="throughput-summary">
+                                <span class="throughput-label">Current Active Trains</span>
+                                <span class="throughput-value" id="throughput-value">0</span>
+                            </div>
+
+                            <div class="throughput-lines">
+                                <div class="line-item">
+                                    <div class="line-header">
+                                        <span>Main Line</span>
+                                        <span class="line-count">45/80</span>
+                                    </div>
+                                    <div class="line-progress">
+                                        <div class="line-fill blue" style="width: 56.25%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="line-item">
+                                    <div class="line-header">
+                                        <span>Express Route</span>
+                                        <span class="line-count">32/50</span>
+                                    </div>
+                                    <div class="line-progress">
+                                        <div class="line-fill green" style="width: 64%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="line-item">
+                                    <div class="line-header">
+                                        <span>Freight Line</span>
+                                        <span class="line-count">28/40</span>
+                                    </div>
+                                    <div class="line-progress">
+                                        <div class="line-fill orange" style="width: 70%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="line-item">
+                                    <div class="line-header">
+                                        <span>Local Service</span>
+                                        <span class="line-count">22/35</span>
+                                    </div>
+                                    <div class="line-progress">
+                                        <div class="line-fill purple" style="width: 62.86%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alerts-card">
+                            <h3 class="alerts-title">Alert Summary</h3>
+
+                            <div class="alert-list">
+                                <div class="alert-item">
+                                    <div class="alert-info">
+                                        <div class="alert-dot green"></div>
+                                        <span class="alert-text">System Healthy</span>
+                                    </div>
+                                    <div class="alert-badge green">Normal</div>
+                                </div>
+
+                                <div class="alert-item">
+                                    <div class="alert-info">
+                                        <div class="alert-dot yellow pulse"></div>
+                                        <span class="alert-text">Minor Delays</span>
+                                    </div>
+                                    <div class="alert-badge yellow">3 Active</div>
+                                </div>
+
+                                <div class="alert-item">
+                                    <div class="alert-info">
+                                        <div class="alert-dot blue"></div>
+                                        <span class="alert-text">Maintenance</span>
+                                    </div>
+                                    <div class="alert-badge blue">Scheduled</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Stats Row -->
+                <div class="bottom-stats">
+                    <div class="stat-item blue">
+                        <div class="stat-value">15min</div>
+                        <div class="stat-label">Avg Prediction Window</div>
+                    </div>
+                    <div class="stat-item green">
+                        <div class="stat-value">52%</div>
+                        <div class="stat-label">Delay Reduction</div>
+                    </div>
+                    <div class="stat-item purple">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Monitoring</div>
+                    </div>
+                    <div class="stat-item orange">
+                        <div class="stat-value">AI</div>
+                        <div class="stat-label">Powered</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Control Interface Section -->
+    <section class="control-interface">
+        <div class="control-background">
+            <div class="gradient-bg"></div>
+            <div class="radial-pattern-1"></div>
+            <div class="radial-pattern-2"></div>
+            <div class="grid-pattern"></div>
+        </div>
+
+        <div class="container">
+            <div class="control-content">
+                <div class="control-header">
+                    <div class="control-badge">
+                        <div class="badge-dot white"></div>
+                        Control System Ready
+                    </div>
+
+                    <h2 class="control-title">
+                        Ready to Transform Your<br>
+                        <span class="gradient-text yellow-white">Railway Operations?</span>
+                    </h2>
+
+                    <p class="control-description">
+                        Join the future of intelligent railway management with our AI-powered control system.
+                        Experience unprecedented efficiency, safety, and reliability.
+                    </p>
+                </div>
+
+                <div class="control-panel">
+                    <div class="panel-grid">
+                        <!-- Launch Interface -->
+                        <div class="launch-interface">
+                            <h3 class="interface-title">Initialize GATI System</h3>
+
+                            <div class="system-status">
+                                <div class="status-item">
+                                    <div class="status-check green">✓</div>
+                                    <span>AI Engine: Ready</span>
+                                </div>
+                                <div class="status-item">
+                                    <div class="status-check green">✓</div>
+                                    <span>Digital Twin: Synchronized</span>
+                                </div>
+                                <div class="status-item">
+                                    <div class="status-check green">✓</div>
+                                    <span>Network Connection: Stable</span>
+                                </div>
+                                <div class="status-item">
+                                    <div class="status-check yellow pulse"></div>
+                                    <span>Awaiting User Authorization</span>
+                                </div>
+                            </div>
+
+                            <div class="launch-form">
+                                <input type="email" id="email-input" placeholder="Enter your email for system access"
+                                    class="email-input" />
+                                <button id="launch-button" class="btn btn-launch">
+                                    <span class="btn-text">Launch Control Dashboard</span>
+                                    <span class="btn-icon">🚀</span>
+                                    <div class="loading-spinner hidden"></div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Benefits -->
+                        <div class="benefits-section">
+                            <h4 class="benefits-title">What You Get</h4>
+                            <div class="benefits-list">
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">🆓</span>
+                                    <div class="benefit-text">
+                                        <div class="benefit-title">Free 30-day trial</div>
+                                        <div class="benefit-desc">Full system access</div>
+                                    </div>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">⚡</span>
+                                    <div class="benefit-text">
+                                        <div class="benefit-title">Instant deployment</div>
+                                        <div class="benefit-desc">Setup in minutes</div>
+                                    </div>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">🛡️</span>
+                                    <div class="benefit-text">
+                                        <div class="benefit-title">24/7 monitoring</div>
+                                        <div class="benefit-desc">Round-the-clock support</div>
+                                    </div>
+                                </div>
+                                <div class="benefit-item">
+                                    <span class="benefit-icon">📊</span>
+                                    <div class="benefit-text">
+                                        <div class="benefit-title">Advanced analytics</div>
+                                        <div class="benefit-desc">Real-time insights</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <div class="trust-value">500+</div>
+                        <div class="trust-label">Railway Networks</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-value">99.8%</div>
+                        <div class="trust-label">System Reliability</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-value">52%</div>
+                        <div class="trust-label">Delay Reduction</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-value">24/7</div>
+                        <div class="trust-label">Expert Support</div>
+                    </div>
+                </div>
+
+                <!-- Security Notice -->
+                <div class="security-notice">
+                    <span class="security-icon">🔒</span>
+                    <span class="security-text">Enterprise-grade security • SOC 2 Type II certified • GDPR
+                        compliant</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="floating-element elem-1"></div>
+        <div class="floating-element elem-2"></div>
+        <div class="floating-element elem-3"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-background">
+            <div class="footer-patterns"></div>
+        </div>
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+
+                    <!-- Company Info -->
+                    <div class="footer-main">
+                        <div class="footer-logo">
+                            <div class="footer-logo-icon">
+                                <div class="logo-shape primary"></div>
+                                <div class="logo-shape secondary"></div>
+                                <div class="logo-shape inner"></div>
+                                <div class="logo-letter">G</div>
+                            </div>
+                            <div class="footer-logo-text">
+                                <h3 class="footer-logo-title">GATI</h3>
+                                <p class="footer-logo-subtitle">Generalized AI Train Intelligence</p>
+                            </div>
+                        </div>
+
+                        <p class="footer-description">
+                            Advanced Railway Automation Technology for the future of intelligent transportation.
+                            Powered by AI to ensure safe, efficient, and reliable railway operations across global
+                            networks.
+                        </p>
+
+                        <!-- System Status Card -->
+                        <div class="footer-status-card">
+                            <div class="status-header">
+                                <span class="status-title">System Status</span>
+                                <div class="status-badge green">
+                                    <div class="badge-dot white"></div>
+                                    All Systems Operational
+                                </div>
+                            </div>
+                            <div class="status-metrics">
+                                <div class="status-metric">
+                                    <div class="metric-value green">99.8%</div>
+                                    <div class="metric-label">Uptime</div>
+                                </div>
+                                <div class="status-metric">
+                                    <div class="metric-value blue">127</div>
+                                    <div class="metric-label">Active Networks</div>
+                                </div>
+                                <div class="status-metric">
+                                    <div class="metric-value teal">Real-time</div>
+                                    <div class="metric-label">Monitoring</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-links">
+                        <h4 class="footer-section-title">Quick Links</h4>
+                        <nav class="footer-nav">
+                            <a href="#" class="footer-link">Control Dashboard</a>
+                            <a href="#" class="footer-link">System Features</a>
+                            <a href="#" class="footer-link">API Documentation</a>
+                            <a href="#" class="footer-link">Technical Support</a>
+                            <a href="#" class="footer-link">Integration Guide</a>
+                            <a href="#" class="footer-link">Release Notes</a>
+                        </nav>
+                    </div>
+
+                    <!-- Contact & Support -->
+                    <div class="footer-contact">
+                        <h4 class="footer-section-title">Contact & Support</h4>
+
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <div class="contact-icon blue">📧</div>
+                                <div class="contact-info">
+                                    <div class="contact-primary">support@gati.ai</div>
+                                    <div class="contact-secondary">24/7 Technical Support</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon green">📞</div>
+                                <div class="contact-info">
+                                    <div class="contact-primary">+91 1800-GATI-AI</div>
+                                    <div class="contact-secondary">Emergency Hotline</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon purple">📍</div>
+                                <div class="contact-info">
+                                    <div class="contact-primary">New Delhi, India</div>
+                                    <div class="contact-secondary">Global Operations Center</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-outline btn-sm contact-btn">
+                            Contact Support Team
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="footer-divider"></div>
+
+                <!-- Bottom Section -->
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <span class="copyright-icon">🚄</span>
+                        <span class="copyright-text">© 2025 GATI Control System. All rights reserved.</span>
+                    </div>
+
+                    <div class="footer-tech-info">
+                        <span>Built for Indian Railways</span>
+                        <span class="separator">•</span>
+                        <span>Powered by Artificial Intelligence</span>
+                        <span class="separator">•</span>
+                        <span>Secured by Design</span>
+                    </div>
+
+                    <div class="footer-legal">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#" class="legal-link">Security</a>
+                    </div>
+                </div>
+
+                <!-- Technical Specs Badges -->
+                <div class="footer-badges">
+                    <span class="footer-badge">Enterprise Grade</span>
+                    <span class="footer-badge">SOC 2 Type II</span>
+                    <span class="footer-badge">ISO 27001 Certified</span>
+                    <span class="footer-badge">GDPR Compliant</span>
+                    <span class="footer-badge">99.8% SLA</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal hidden">
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-icon">✅</div>
+                <h3 class="modal-title">System Initialized Successfully!</h3>
+                <p class="modal-description">Railway Control Dashboard is ready to use.</p>
+                <button class="btn btn-primary modal-button" onclick="closeModal()">
+                    Continue to Dashboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="1page.js"></script>
+</body>
+
+</html>
